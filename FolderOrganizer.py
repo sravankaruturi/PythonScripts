@@ -1,6 +1,8 @@
 import os
 import sys
 import shutil
+import tkinter
+
 
 # Go to the Folder Mentioned.
 # Organize the PDF's, Docs, Spreadsheets into the Documents Folder.
@@ -9,6 +11,30 @@ import shutil
 # Organize any other Files into Unsorted Folder.
 
 # We can run this script once every couple of days on most of our folders to keep ourselves organized.
+
+# We change it up with a GUI.
+
+# GUI Stuff
+rootWindow = tkinter.Tk()
+
+topFrame = tkinter.Frame(rootWindow)
+topFrame.pack()
+
+bottomFrame = tkinter.Frame(rootWindow)
+bottomFrame.pack(side=tkinter.BOTTOM)
+
+button1 = tkinter.Button(topFrame, text="Organize", fg="red")
+button2 = tkinter.Button(topFrame, text="Organize", fg="green")
+button3 = tkinter.Button(topFrame, text="Organize", fg="blue")
+
+button4 = tkinter.Button(bottomFrame, text="Organize", fg="cyan")
+
+button1.pack(side=tkinter.LEFT)
+button2.pack(side=tkinter.LEFT)
+button3.pack(side=tkinter.LEFT)
+button4.pack()
+
+rootWindow.mainloop()
 
 if len(sys.argv) < 2:
 
