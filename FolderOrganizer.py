@@ -10,7 +10,13 @@ import shutil
 
 # We can run this script once every couple of days on most of our folders to keep ourselves organized.
 
-location = sys.argv[1];
+if len(sys.argv) < 2:
+
+    location = input("Folder Location:")
+
+else:
+
+    location = sys.argv[1];
 
 print(location);
 
@@ -69,7 +75,7 @@ for f in os.listdir(location):
 
         shutil.move(f, icloud_dir + f)
 
-    elif file_extension in [".app", ".exe"]:
+    elif file_extension in [".app", ".exe", ".msi"]:
 
         if not app_init:
 
